@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('lijsts', function (Blueprint $table) {
             $table->Bigincrements('id')->autoIncrement();
-            $table->integer('role')->default('1');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('winkel_id');
+            $table->Integer('day')->nullable();
+            $table->boolean('accepted')->default(false);
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('lists');
     }
 };

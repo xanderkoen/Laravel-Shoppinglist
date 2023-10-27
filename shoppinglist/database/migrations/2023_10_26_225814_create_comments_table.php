@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lists', function (Blueprint $table) {
-            $table->Bigincrements('id')->autoIncrement();
-            $table->integer('user_id');
-            $table->string('name');
-            $table->integer('day')->nullable();
+        Schema::create('comments', function (Blueprint $table) {
+            $table->BigIncrements('id')->autoIncrement();
+            $table->foreignId('lijst_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('comment');
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lists');
+        Schema::dropIfExists('comments');
     }
 };

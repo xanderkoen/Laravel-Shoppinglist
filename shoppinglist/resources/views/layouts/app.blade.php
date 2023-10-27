@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <a href="{{route('lists.index')}}" class="navbar-brand">Shoppinglists</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -55,6 +55,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @if(auth()->user()->role == 2)
+                                        <a class="dropdown-item" href="/admin">Admin panel</a>
+                                    @endif
+
+                                <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
