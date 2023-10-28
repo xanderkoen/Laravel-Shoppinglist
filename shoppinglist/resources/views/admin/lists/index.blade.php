@@ -35,17 +35,17 @@
                 <a class="link-underline-danger" href="{{route('admin.list.delete', $list->id)}}">Verwijder</a>
                 @if($list->accepted == true)
                     <p>Deze lijst is gepubliceerd</p>
-                    <form method="post" action="{{route('admin.publish', $list->id)}}">
+                    <form method="POST" action="{{route('admin.publish', $list->id)}}">
                         @csrf
-                        @method('PUT')
+                        @method('POST')
 
                         <button type="submit" class="alert alert-danger">Unpublish</button>
                     </form>
                 @else
                     <p>Deze lijst is nog niet gepubliceerd</p>
-                    <form method="post" action="{{route('admin.publish', $list->id)}}">
+                    <form method="POST" action="{{route('admin.publish', $list->id)}}">
                         @csrf
-                        @method('PUT')
+                        @method('POST')
 
                         <button type="submit" class="alert alert-success">Publish</button>
                     </form>

@@ -67,7 +67,7 @@ Route::delete('/admin/user/delete/{user}', [AdminController::class, 'userdestroy
 
 //--- ADMIN LIST PANEL ---//
 Route::get('/admin/lists', [AdminController::class, 'listindex'])->middleware(CheckLogin::class)->middleware(CheckRole::class)->name('admin.lists.index');
-Route::put('/admin/lists/{list}', [AdminController::class, 'publish'])->middleware(CheckLogin::class)->middleware(CheckRole::class)->name('admin.publish');
+Route::post('/admin/lists/{list}', [AdminController::class, 'publish'])->middleware(CheckLogin::class)->middleware(CheckRole::class)->name('admin.publish');
 Route::get('/admin/list/edit/{list}', [AdminController::class, 'listedit'])->middleware(CheckLogin::class)->middleware(CheckRole::class)->name('admin.list.edit');
 Route::put('/admin/list/edit/{list}', [AdminController::class, 'listupdate'])->middleware(CheckLogin::class)->middleware(CheckRole::class)->name('admin.list.update');
 Route::get('/admin/list/delete/{list}', [AdminController::class, 'listdelete'])->middleware(CheckLogin::class)->middleware(CheckRole::class)->name('admin.list.delete');
