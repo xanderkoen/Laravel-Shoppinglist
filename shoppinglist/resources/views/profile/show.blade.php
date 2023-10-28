@@ -59,7 +59,11 @@
 
             <br>
 
-            <p>Al mijn gemaakte lijsten</p>
+            <p>--- Al mijn gemaakte lijsten ---</p>
+
+                @if($lists->count() == 0)
+                    <p>Je hebt nog geen lijsten aangemaakt.</p>
+                @endif
 
             <div class="container">
                 <div class="row">

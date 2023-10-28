@@ -96,6 +96,9 @@
             @endif
         </select>
 
+        <label for="text">Wat staat er in je lijstje?</label>
+        <textarea name="text" id="text" placeholder="Ingredienten?" rows="4" cols="50" style="resize: none">{{old('text', $list->text)}}</textarea>
+
         <button type="submit">Bewerk</button>
     </form>
 

@@ -25,7 +25,8 @@ class ListUpdateRequest extends FormRequest
         return [
             'name' => 'required|string|min:3|max:255',
             'winkel_id' => 'required|integer|min:1|max:5',
-            'day' => 'required|integer|min:1|max:7'
+            'day' => 'required|integer|min:1|max:7',
+            'text' => 'required|string|min:1|max:255',
         ];
     }
 }

@@ -59,14 +59,17 @@ class LijstController extends Controller
 
         $query = Lijst::query();
 
-        if ($search) {
-            $query->where('name', 'LIKE', "%$search%");
-        }
-
+        //haalt alle items op met het gekozen filter als die is gekozen
         if ($filter) {
             $query->where('winkel_id', '=', "$filter");
         }
 
+        //vervolgens haalt ie alleen de posts op basis van zoekfunctie (zoekend naar titel en in de (lijst->text))
+        if ($search) {
+            $query->where('name', 'LIKE', "%$search%")->orWhere('text', 'LIKE', "%$search%");
+        }
+
+        //vervolgens laat ie alleen posts door die gepublished zijn door een admin
         $lists = $query->where('accepted', true)->get();
 
         $winkels = Winkel::all();
@@ -95,6 +98,7 @@ class LijstController extends Controller
             'user_id' => Auth()->user()->id,
             'name' => $request->name,
             'winkel_id' => $request->winkel_id,
+            'text' => $request->text,
             'day' => $request->day,
         ]);
 
@@ -115,6 +119,7 @@ class LijstController extends Controller
         $list->update([
             'name' => $request->input('name'),
             'winkel_id' => $request->input('winkel_id'),
+            'text' => $request->input('text'),
             'day' => $request->input('day')
         ]);
 

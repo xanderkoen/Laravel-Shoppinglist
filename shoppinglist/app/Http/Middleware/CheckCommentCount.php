@@ -23,7 +23,9 @@ class CheckCommentCount
             return $next($request);
         }
 
-        return redirect(route('lists.index'))->with('status', 'post eerst 5 comments voordat je een lijst kan aanmaken');
+        $count = 5 - $commentCount;
+
+        return redirect(route('lists.index'))->with('status', "post eerst nog $count comments voordat je een lijst kan aanmaken");
 
     }
 }

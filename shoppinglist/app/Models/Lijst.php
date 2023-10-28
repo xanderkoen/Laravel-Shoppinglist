@@ -9,7 +9,7 @@ class Lijst extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'user_id', 'winkel_id', 'day', 'accepted'];
+    protected $fillable = ['name', 'user_id', 'winkel_id', 'day', 'accepted', 'text'];
 
     public $timestamps = false;
 

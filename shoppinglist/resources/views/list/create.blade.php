@@ -40,6 +40,11 @@
             <option value="1">Zondag</option>
         </select>
 
+        <br>
+
+        <label for="text">Wat staat er in je lijstje?</label>
+        <textarea name="text" id="text" placeholder="Ingredienten?" rows="4" cols="50" style="resize: none">{{old('text')}}</textarea>
+
         <button type="submit">Maak aan</button>
     </form>
 

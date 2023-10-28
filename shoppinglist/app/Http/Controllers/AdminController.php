@@ -98,6 +98,7 @@ class AdminController extends Controller
            'name' => $request->name,
             'user_id' => $request->user_id,
             'winkel_id' => $request->winkel_id,
+            'text' => $request->text,
             'day' => $request->day
         ]);
 

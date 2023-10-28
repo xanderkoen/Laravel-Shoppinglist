@@ -25,6 +25,7 @@ class AdminListUpdateRequest extends FormRequest
             'user_id' => 'required|integer',
             'name' => 'required|string|min:3|max:255',
             'winkel_id' => 'required|integer|min:1|max:5',
+            'text' => 'required|string|min:1|max:255',
             'day' => 'required|integer|min:1|max:7'
         ];
     }

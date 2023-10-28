@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('winkel_id');
             $table->Integer('day')->nullable();
+            $table->mediumText('text');
             $table->boolean('accepted')->default(false);
         });
     }

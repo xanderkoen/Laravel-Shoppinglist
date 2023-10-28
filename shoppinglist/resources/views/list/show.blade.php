@@ -30,6 +30,10 @@
                     Zondag</p>
                 @endif
 
+                <div>
+                    <p>{{$list->text}}</p>
+                </div>
+
                 @if(auth()->user()->id == $list->user_id)
                     <a href="{{route('list.edit', $list->id)}}"><button>Pas je lijst aan</button></a>
 

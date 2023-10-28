@@ -18,6 +18,7 @@ class LijstSeeder extends Seeder
                 'user_id' => '1',
                 'name' => 'lijstje 1',
                 'winkel_id' => '1',
+                'text' => 'text',
                 'day' => '1',
                 'accepted' => true
             ],
@@ -25,6 +26,7 @@ class LijstSeeder extends Seeder
                 'user_id' => '1',
                 'name' => 'lijstje 2',
                 'winkel_id' => '2',
+                'text' => 'text',
                 'day' => '2',
                 'accepted' => true
             ],
@@ -32,6 +34,7 @@ class LijstSeeder extends Seeder
                 'user_id' => '1',
                 'name' => 'lijstje 3',
                 'winkel_id' => '3',
+                'text' => 'text',
                 'day' => '3',
                 'accepted' => true
             ],
@@ -39,6 +42,7 @@ class LijstSeeder extends Seeder
                 'user_id' => '1',
                 'name' => 'lijstje 4',
                 'winkel_id' => '4',
+                'text' => 'text',
                 'day' => '4',
                 'accepted' => true
             ],
@@ -46,6 +50,7 @@ class LijstSeeder extends Seeder
                 'user_id' => '1',
                 'name' => 'lijstje 5',
                 'winkel_id' => '5',
+                'text' => 'text',
                 'day' => '5',
                 'accepted' => true
             ],
@@ -53,6 +58,7 @@ class LijstSeeder extends Seeder
                 'user_id' => '2',
                 'name' => 'zestys lijst',
                 'winkel_id' => '5',
+                'text' => 'text',
                 'day' => '3',
             ],];
 
